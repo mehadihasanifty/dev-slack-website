@@ -61,7 +61,7 @@ TypeScript
 
 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
--Parent to Child: The parent passes data as attributes (props) to the child component (e.g., <TechCard tech={techData} />).
+- Parent to Child: The parent passes data as attributes (props) to the child component (e.g., <TechCard tech={techData} />).
 - Child to Parent: The parent passes a callback function to the child as a prop. The child calls that function when an action occurs to pass data back as arguments (e.g., <TechCard onAdd={handleAddToStack} />).
 
 ---
