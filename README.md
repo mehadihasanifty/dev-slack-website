@@ -49,6 +49,7 @@ useEffect handles side effects like data fetching or DOM manipulation. It was us
 React uses unique keys (like tech.id) to track which list items are added, updated, or removed. It allows React to re-render only the specific DOM node that changed instead of rebuilding the entire list from scratch.
 
 6. What is conditional rendering? Show one place you used it.
+
 Conditional rendering means rendering specific UI elements only when certain conditions are met. In this project, it was used in the sidebar to render an empty state message when no items are selected:
 
 TypeScript
