@@ -1,3 +1,47 @@
+# 🚀 DevStack - Devlopment Stack
+
+### Build Your Ideal Development Stack
+
+DevStack is an interactive workspace designed to help developers explore, compare, and assemble their ideal technology stack in real time.
+
+Seamlessly explore tools by category, build your custom tech stack in real time, and visually manage your architectural workflow in one unified space.
+
+---
+
+## ✨ Features
+
+### 1. 🧩 Build Your Own Stack
+Architect your custom tech stack on the fly with single-click precision.
+
+### 2. 📚 Explore Technologies
+Discover a curated library of tools across Frontend, Backend, Databases, DevOps, and beyond.
+
+### 3. ⚡ Interactive Stack Management
+Manage your selected stack with instant visual highlights, dynamic card borders, and live feedback.
+
+---
+
+## 🛠️ Technologies Used
+
+- ⚛️ React
+- 🔷 TypeScript
+- 🎨 Tailwind CSS
+- 🌼 DaisyUI
+- 🔔 React Toastify
+- ⭐ React Icons
+- ⚡ Vite
+
+---
+
+## 🎯 Project Highlights
+
+* Fully responsive grid architecture engineered for mobile, tablet, and desktop viewports.
+*  Built with clean, reusable component hierarchies for optimal maintainability.
+*  Leverages TypeScript interfaces to enforce strict data contracts and prevent runtime errors.
+*  Powered by React Hooks (`useState`, `useEffect`) for fluid data flow and dynamic UI synchronization.
+*  Simulates real-time API data fetching with dynamic local JSON imports and active loading states.
+*  Features interactive green border highlights, disabled action states, and real-time toast notifications.
+*  Designed with clean, minimalist aesthetics using Tailwind CSS for an intuitive developer workspace.
 
 
 
