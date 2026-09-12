@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -68,7 +68,7 @@ const TechnologyPart = () => {
       <div className="mb-8">
         <h1 className="text-3xl font-extrabold text-slate-900 md:text-4xl">
           Explore the{" "}
-          <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
             Technologies
           </span>
         </h1>
@@ -122,7 +122,7 @@ const TechnologyPart = () => {
                       <p className="mt-2 min-h-[50px] text-xs leading-relaxed text-slate-400 line-clamp-3">
                         {tech.description}
                       </p>
-
+                      <div className="divider"></div>
                       {/* Meta Chips */}
                       <div className="mt-6 flex items-center justify-between text-xs text-slate-400">
                         <span className="rounded bg-slate-50 px-2 py-1 font-medium text-slate-500">
@@ -159,13 +159,17 @@ const TechnologyPart = () => {
         <aside className="sticky top-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm lg:col-span-1">
           <h2 className="text-base font-bold text-slate-900">Your Stack</h2>
           <p className="mt-0.5 text-xs font-medium text-slate-400">
-            {stack.length} Technology Selected
+              {stack.length === 0
+            ? "No technologies selected yet."
+            : `${stack.length} Technology Selected.`}
+              
           </p>
 
           <div className="mt-5 space-y-3">
             {stack.length === 0 ? (
               <div className="rounded-xl border border-dashed border-slate-200 py-8 text-center text-xs text-slate-400">
-                No technologies selected yet.
+               
+                Your stack is empty
               </div>
             ) : (
               stack.map((item) => (
@@ -191,7 +195,7 @@ const TechnologyPart = () => {
 
                   <button
                     onClick={() => handleRemoveFromStack(item)}
-                    className="p-1 text-slate-300 transition-colors hover:text-slate-500"
+                    className="p-1 text-slate-500 text-xl transition-colors hover:text-red-700 cursor-pointer"
                     aria-label={`Remove ${item.name}`}
                   >
                     ✕
@@ -204,7 +208,7 @@ const TechnologyPart = () => {
           {stack.length > 0 && (
             <button
               onClick={handleRemoveAll}
-              className="mt-6 w-full rounded-xl border border-red-200 py-2.5 text-xs font-bold text-red-500 transition-colors hover:bg-red-50"
+              className="mt-6 w-full rounded-xl border-2 border-red-200 py-2.5 text-lg font-bold text-red-500 transition-colors hover:bg-red-500  hover:text-white cursor-pointer"
             >
               Remove All
             </button>

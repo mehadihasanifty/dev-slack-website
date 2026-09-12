@@ -1,5 +1,5 @@
 import Footer from "./components/Footer";
-import HeroSection from "./components/heroSection";
+import HeroSection from "./components/HeroSection";
 import Nav from "./components/Nav";
 import TechnologyPart from "./components/TechnologyPart";
 function App() {
