@@ -1,33 +1,62 @@
 import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import type { Technology } from "./technology.inteface";
 import technologiesData from "../../Explore.json";
 
 const TechnologyPart = () => {
   const technologies: Technology[] = technologiesData;
+
   const [stack, setStack] = useState<Technology[]>([]);
 
   const handleAddToStack = (tech: Technology) => {
     const isAlreadyAdded = stack.some((item) => item.id === tech.id);
 
     if (isAlreadyAdded) {
-      alert(`⚠️ "${tech.name}" is already in your stack!`);
+      // ⚠️ Duplicate add alert
+      toast.warning(`"${tech.name}" is already in your stack!`, {
+        position: "top-right",
+        autoClose: 2500,
+      });
       return;
     }
 
     setStack((prevStack) => [...prevStack, tech]);
+    
+    // ✅ Add to stack alert
+    toast.success(`"${tech.name}" added to your stack!`, {
+      position: "top-right",
+      autoClose: 2500,
+    });
   };
 
-  const handleRemoveFromStack = (id: string) => {
-    setStack((prevStack) => prevStack.filter((item) => item.id !== id));
+  const handleRemoveFromStack = (tech: Technology) => {
+    setStack((prevStack) => prevStack.filter((item) => item.id !== tech.id));
+    
+    // ℹ️ Remove single item alert
+    toast.info(`"${tech.name}" removed from stack.`, {
+      position: "top-right",
+      autoClose: 2500,
+    });
   };
 
   // Clear Entire Stack
   const handleRemoveAll = () => {
     setStack([]);
+    
+    // ❌ Remove all items alert
+    toast.error("All technologies removed from stack!", {
+      position: "top-right",
+      autoClose: 2500,
+    });
   };
 
   return (
     <div>
+      {/* Toast Notification Container */}
+      <ToastContainer />
+
       <div className="mb-8">
         <h1 className="text-3xl font-extrabold text-slate-900 md:text-4xl">
           Explore the{" "}
@@ -41,7 +70,7 @@ const TechnologyPart = () => {
       </div>
 
       <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-4">
-        {/* Technology Grid (Responsive 1 -> 2 -> 3 Columns) */}
+        {/* Technology Grid */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-3 xl:grid-cols-3">
           {technologies.map((tech) => {
             const isAdded = stack.some((item) => item.id === tech.id);
@@ -143,7 +172,7 @@ const TechnologyPart = () => {
 
                   {/* Remove Button */}
                   <button
-                    onClick={() => handleRemoveFromStack(item.id)}
+                    onClick={() => handleRemoveFromStack(item)}
                     className="p-1 text-slate-300 transition-colors hover:text-slate-500"
                     aria-label={`Remove ${item.name}`}
                   >
